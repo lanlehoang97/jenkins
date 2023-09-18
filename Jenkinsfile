@@ -10,7 +10,8 @@ pipeline {
     stage('Build') {
       steps {
         withDockerRegistry(credentialsId: '4a7fd5f2-2d39-456d-8b1f-99893bae3f8c', url: 'https://index.docker.io/v1/') {
-          sh 'docker build -t build-docker'
+          sh 'docker build -t phant0m97/welcome-jenkins:v1'
+          sh 'docker push phant0m97/welcome-jenkins:v1'
         }
       }
     }
